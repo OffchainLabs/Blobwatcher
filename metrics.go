@@ -23,6 +23,14 @@ var (
 		},
 		[]string{"account", "blobCount"},
 	)
+	blobTransactionFeesPaid = promauto.NewHistogramVec(
+		prometheus.HistogramOpts{
+			Name:    "blob_transaction_fees_paid",
+			Help:    "The transaction fees paid by the account for the blob transaction(in Gwei)",
+			Buckets: []float64{0.001, 0.01, 1, 10, 1000, 100000, 10000000, 1000000000, 10000000000, 1000000000000},
+		},
+		[]string{"account", "blobCount"},
+	)
 	blockNumberGauge = promauto.NewGauge(prometheus.GaugeOpts{
 		Name: "block_number",
 		Help: "The current block number in your execution client",
