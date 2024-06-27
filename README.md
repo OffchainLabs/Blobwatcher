@@ -16,7 +16,7 @@ This tool can be either run using go or the dockerfile attached in the repositor
 Go:
 
 ```
-go run ./.. -- --execution-endpoint ws://localhost:8546 --metrics-endpoint localhost:8080
+go run . --execution-endpoint ws://localhost:8546 --metrics-endpoint localhost:8080
 
 ```
 Docker:
